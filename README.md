@@ -17,7 +17,7 @@ I'm a 6th-semester Artificial Intelligence student passionate about building rea
 **Visibility Bots Innovation Lab  AI Summer Internship 2026**
 **Track 2: NLP & AI Agents**
 
-Focused on large language models, prompt engineering, retrieval-augmented generation (RAG), and multi-agent systems — with hands-on project work built using accessible, free-tier APIs (Groq, Gemini, OpenRouter).
+Focused on large language models, prompt engineering, retrieval-augmented generation (RAG), and multi-agent systems  with hands-on project work built using accessible
 
 
 ## Career Goals
@@ -60,6 +60,6 @@ Focused on large language models, prompt engineering, retrieval-augmented genera
 
 ## Connect With Me
 
-# Faisalabad, Pakistan
-# Email: shaisshahid628@gmail.com
-# Linkedin: https://www.linkedin.com/in/shais-shahid-0566482a3
+ **Faisalabad, Pakistan**
+ **Email:** shaisshahid628@gmail.com
+ **Linkedin:** https://www.linkedin.com/in/shais-shahid-0566482a3
