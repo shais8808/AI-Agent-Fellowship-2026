@@ -30,7 +30,7 @@ Focused on large language models, prompt engineering, retrieval-augmented genera
 
 ## Learning Goals
 
-- Deepen understanding of **transformer architecture** — attention mechanisms, encoder/decoder models, and fine-tuning techniques (LoRA, QLoRA).
+- Deepen understanding of **transformer architecture** — attention mechanisms, encoder/decoder models,
 - Get hands-on with **RAG (Retrieval-Augmented Generation)** pipelines and vector databases.
 - Learn to design and orchestrate **multi-agent AI systems** for complex task automation.
 - Master **prompt engineering** best practices for reliable, production-grade LLM outputs.
@@ -61,5 +61,7 @@ Focused on large language models, prompt engineering, retrieval-augmented genera
 ## Connect With Me
 
  **Faisalabad, Pakistan**
+ 
  **Email:** shaisshahid628@gmail.com
+ 
  **Linkedin:** https://www.linkedin.com/in/shais-shahid-0566482a3
