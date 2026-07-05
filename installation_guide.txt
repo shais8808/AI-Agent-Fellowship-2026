@@ -1,0 +1,130 @@
+INSTALLATION GUIDE
+
+Orbit is a Streamlit-based chatbot that supports multiple LLM providers
+(Gemini, DeepSeek, and Llama 3.3 70B via GitHub Models).
+
+1. PREREQUISITES
+
+- Python 3.9 or higher installed
+- pip (Python package manager)
+- Git installed
+- A GitHub account (for GitHub Models API access)
+- API keys/tokens for the providers you want to use:
+    * GitHub Models Token (for Llama 3.3 70B)
+    * Gemini API Key (Google AI Studio)
+    * DeepSeek API Key
+
+2. CLONE THE REPOSITORY
+
+Open terminal / command prompt and run:
+
+    git clone https://github.com/<your-username>/orbit.git
+    cd orbit
+
+(Replace <your-username> with your actual GitHub username/repo path)
+
+3. CREATE A VIRTUAL ENVIRONMENT
+
+Windows:
+
+    python -m venv venv
+    venv\Scripts\activate
+
+macOS / Linux:
+
+    python3 -m venv venv
+    source venv/bin/activate
+
+4. INSTALL DEPENDENCIES
+
+Make sure requirements.txt is present in the project folder, then run:
+
+    pip install -r requirements.txt
+
+Common packages typically included:
+    streamlit
+    google-generativeai
+    openai
+    requests
+    python-dotenv
+
+
+5. SET UP ENVIRONMENT VARIABLES
+
+Create a file named ".env" in the project root and add your API keys:
+
+    GITHUB_TOKEN=your_github_models_token_here
+    GEMINI_API_KEY=your_gemini_api_key_here
+    DEEPSEEK_API_KEY=your_deepseek_api_key_here
+
+Notes:
+- GitHub Models token can be generated from:
+  https://github.com/settings/tokens
+  (needs "models: read" permission for GitHub Models access)
+- Gemini API key can be generated from Google AI Studio:
+  https://aistudio.google.com/
+- DeepSeek API key can be generated from:
+  https://platform.deepseek.com/
+
+Never share your .env file or commit it to GitHub.
+Add ".env" to your .gitignore file.
+
+6. RUN THE APPLICATION
+
+Once dependencies are installed and .env is configured, run:
+
+    streamlit run app.py
+
+(Replace "app.py" with your actual main file name if different)
+
+The app will open automatically in your default browser at:
+
+    http://localhost:8501
+
+7. USING ORBIT
+- Select your preferred model provider from the sidebar
+  (Gemini / DeepSeek / Llama 3.3 70B)
+- Type your message in the chat input box
+- Customize system prompt if the option is available
+- View responses in real time in the chat window
+
+8. TROUBLESHOOTING
+
+Issue: "ModuleNotFoundError"
+Fix: Run "pip install -r requirements.txt" again inside the activated
+     virtual environment.
+
+Issue: "Invalid API Key" or "401 Unauthorized"
+Fix: Double-check your .env file values, ensure no extra spaces,
+     and confirm the key/token hasn't expired.
+
+Issue: "Model deprecated" or "404 model not found"
+Fix: Check provider documentation for updated model names and
+     update the model name in the code accordingly.
+
+Issue: Streamlit port already in use
+Fix: Run with a different port:
+     streamlit run app.py --server.port 8502
+
+9. PROJECT STRUCTURE (Typical)
+
+orbit/
+│
+├── app.py                 (Main Streamlit application)
+├── requirements.txt       (Python dependencies)
+├── .env                   (API keys - not committed to Git)
+├── .gitignore
+├── README.md
+└── utils/                 (Helper functions, provider integrations)
+
+10. STOPPING THE APP
+
+Press CTRL + C in the terminal to stop the Streamlit server.
+
+To deactivate the virtual environment:
+
+    deactivate
+
+==================================================
+END OF INSTALLATION GUIDE
+==================================================
