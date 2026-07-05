@@ -3,7 +3,9 @@
 **BS Artificial Intelligence Student | AI/ML**
 
 📍 Faisalabad, Pakistan
+
 🎓 The University of Faisalabad
+
 🚀 Visibility Bots Innovation Lab — AI Summer Internship 2026 (Track 2: NLP & AI Agents)
 
 
