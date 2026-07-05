@@ -12,41 +12,77 @@ explicitly themed so dark mode never produces invisible or low-contrast text.
 """
 
 
-def get_css(dark: bool) -> str:
-    if dark:
-        bg = "#0d0b14"
-        bg_secondary = "#15121f"
-        sidebar_bg = "#0a0810"
-        card_bg = "#1c1828"
-        card_hover = "#241f34"
-        text = "#f6f4fb"
-        text_muted = "#b6adc9"
-        text_faint = "#847a99"
-        border = "#2c2740"
-        border_soft = "#221e33"
-        input_bg = "#171320"
-        shadow = "0 12px 32px rgba(0, 0, 0, 0.45)"
-    else:
-        bg = "#faf9fd"
-        bg_secondary = "#ffffff"
-        sidebar_bg = "#ffffff"
-        card_bg = "#f5f2fb"
-        card_hover = "#eee7fb"
-        text = "#1c1830"
-        text_muted = "#655d78"
-        text_faint = "#8a8299"
-        border = "#e7e1f3"
-        border_soft = "#efeaf9"
-        input_bg = "#ffffff"
-        shadow = "0 10px 28px rgba(90, 70, 140, 0.10)"
+# Each theme defines every color the stylesheet needs. Keeping dark/light as
+# two entries in one dict (rather than parallel if/else branches) means a
+# missing or mismatched value shows up immediately as a KeyError instead of
+# silently falling back to the wrong branch.
+THEMES = {
+    "dark": {
+        "bg": "#0d0b14",
+        "bg_secondary": "#15121f",
+        "sidebar_bg": "#0a0810",
+        "card_bg": "#1c1828",
+        "card_hover": "#241f34",
+        "text": "#f6f4fb",
+        "text_muted": "#b6adc9",
+        "text_faint": "#847a99",
+        "border": "#2c2740",
+        "border_soft": "#221e33",
+        "input_bg": "#171320",
+        "shadow": "0 12px 32px rgba(0, 0, 0, 0.45)",
+        "accent_light": "#b39dfb",
+        "accent_dark": "#6d28d9",
+        "danger": "#f87171",
+        "success": "#4ade80",
+    },
+    "light": {
+        "bg": "#faf9fd",
+        "bg_secondary": "#ffffff",
+        "sidebar_bg": "#ffffff",
+        "card_bg": "#f5f2fb",
+        "card_hover": "#eee7fb",
+        "text": "#1c1830",
+        "text_muted": "#655d78",
+        "text_faint": "#8a8299",
+        "border": "#e7e1f3",
+        "border_soft": "#efeaf9",
+        "input_bg": "#ffffff",
+        "shadow": "0 10px 28px rgba(90, 70, 140, 0.10)",
+        "accent_light": "#9061f9",
+        "accent_dark": "#5b21b6",
+        "danger": "#dc2626",
+        "success": "#16a34a",
+    },
+}
 
-    accent = "#8b5cf6"
-    accent_light = "#b39dfb" if dark else "#9061f9"
-    accent_dark = "#6d28d9" if dark else "#5b21b6"
-    beacon = "#f2a93b"        # warm secondary accent — the "star" Orbit's models circle
-    beacon_light = "#ffcf7d"
-    danger = "#f87171" if dark else "#dc2626"
-    success = "#4ade80" if dark else "#16a34a"
+# Shared across both themes — Orbit's brand accents don't change with dark mode.
+ACCENT = "#8b5cf6"
+BEACON = "#f2a93b"          # warm secondary accent — the "star" Orbit's models circle
+BEACON_LIGHT = "#ffcf7d"
+
+
+def get_css(dark: bool) -> str:
+    theme = THEMES["dark" if dark else "light"]
+
+    bg = theme["bg"]
+    bg_secondary = theme["bg_secondary"]
+    sidebar_bg = theme["sidebar_bg"]
+    card_bg = theme["card_bg"]
+    card_hover = theme["card_hover"]
+    text = theme["text"]
+    text_muted = theme["text_muted"]
+    text_faint = theme["text_faint"]
+    border = theme["border"]
+    border_soft = theme["border_soft"]
+    input_bg = theme["input_bg"]
+    shadow = theme["shadow"]
+    accent = ACCENT
+    accent_light = theme["accent_light"]
+    accent_dark = theme["accent_dark"]
+    beacon = BEACON
+    beacon_light = BEACON_LIGHT
+    danger = theme["danger"]
+    success = theme["success"]
 
     return f"""
 <style>
